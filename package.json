@@ -1,0 +1,19 @@
+{
+  "name": "ploti-koala",
+  "version": "1.0.0",
+  "description": "koa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhflm/ploti-koala.git"
+  },
+  "author": "grmi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhflm/ploti-koala/issues"
+  },
+  "homepage": "https://github.com/bhflm/ploti-koala#readme"
+}
