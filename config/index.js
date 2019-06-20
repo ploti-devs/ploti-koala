@@ -5,5 +5,10 @@ if (exports.ENVIRONMENT !== 'production') {
 }
 
 exports.config = {
-  port: process.env.PORT
+  port: process.env.PORT,
+  api: {
+    brains: process.env.PLOTI_BRAINS_URL,
+    ploti: process.env.PLOTI_BUSINESS_URL
+  }
+
 };
