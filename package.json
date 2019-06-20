@@ -2,8 +2,9 @@
   "name": "ploti-koala",
   "version": "1.0.0",
   "description": "koa",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/bhflm/ploti-koala/issues"
   },
-  "homepage": "https://github.com/bhflm/ploti-koala#readme"
+  "homepage": "https://github.com/bhflm/ploti-koala#readme",
+  "dependencies": {
+    "@koa/router": "^8.0.0",
+    "dotenv": "^8.0.0",
+    "koa": "^2.7.0",
+    "koa-pino-logger": "^2.1.3",
+    "koa-router": "^7.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
 }
