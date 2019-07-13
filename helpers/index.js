@@ -1,6 +1,6 @@
-const request = require('axios');
-const { get, assign } = require('lodash');
-const logger = require('../logger');
+const request = require('axios'),
+  { get, assign } = require('lodash'),
+  logger = require('../logger');
 
 exports.getRequest = async (ctx,endpoint) => {
   const requestOptions = {

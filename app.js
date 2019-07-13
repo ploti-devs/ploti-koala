@@ -1,9 +1,9 @@
-const Koa = require('koa');
-const Router = require('koa-router');
-const bodyParser = require('koa-bodyparser');
-const cors = require('@koa/cors');
-const logger = require('./logger');
-const config = require('./config');
+const Koa = require('koa'),
+  Router = require('koa-router'),
+  bodyParser = require('koa-bodyparser'),
+  cors = require('@koa/cors'),
+  logger = require('./logger'),
+  config = require('./config');
 
 const PORT = config.port || 3000;
 const app = new Koa();
