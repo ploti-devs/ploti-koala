@@ -1,17 +1,45 @@
-const request = require('request-promise-native');
-const { get, assign } = require('lodash');
-const logger = require('../logger');
+const request = require('axios'),
+  { get, assign } = require('lodash'),
+  logger = require('../logger');
 
-exports.getRequest = (ctx,endpoint) => {
+exports.getRequest = async (ctx,endpoint) => {
   const requestOptions = {
-    // headers: get(ctx, ['request','header']), // to do => check why this headers break everything ._.
-    method: get(ctx, ['request', 'method']),
-    query: get(ctx, ['request', 'query']),
-    url: endpoint
+    method: 'get',
+    url: endpoint,
+    query: get(ctx, ['request', 'query'])
   };
-  return request(requestOptions).then(res => {
-    const response = assign(JSON.parse(res), {status: 200});
-    return response;
-  })
-  .catch(err => Promise.reject(err));
+  try {
+    const response = await request(requestOptions);
+    const { data } = response;
+    return data;
+  } catch(err) {
+    ctx.throw(err.response.status, {
+      data: {
+        error: err.response.statusText,
+        message: err.data
+      }
+    });
+  }
+};
+
+exports.postRequest = async (ctx, endpoint) => {
+  const requestOptions = {
+    method: 'post',
+    url: endpoint,
+    headers: ctx.headers,
+    data: ctx.request.body
+  };
+  try {
+    const response = await request(requestOptions);
+    const { data } = response;
+    return data;
+  } catch(err) {
+    ctx.throw(err.response.status, {
+      data: {
+        error: err.response.statusText,
+        message: err.data
+      }
+    });
+  }
+
 };
