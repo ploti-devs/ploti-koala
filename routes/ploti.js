@@ -14,8 +14,8 @@ module.exports = ({ plotiRouter }) => {
       logger.info(`Request to ${companiesURL}:\n ${Util.inspect(response, {depth:null})}`);
       return ctx.body = response;
     } catch (err) {
-      logger.error(err.message);
-      return ctx.response = {...err};
+      ctx.err = err.message;
+      return next();
     };
   });
 
