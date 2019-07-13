@@ -1,9 +1,9 @@
-const Util = require('util');
-const config = require('../config').config;
-const logger = require('../logger');
-const { getRequest, postRequest } = require('../helpers');
-const koaBody = require('koa-body');
-const PLOTI = config.api.ploti;
+const Util = require('util'),
+  config = require('../config').config,
+  logger = require('../logger'),
+  { getRequest, postRequest } = require('../helpers'),
+  koaBody = require('koa-body'),
+  PLOTI = config.api.ploti;
 
 module.exports = ({ plotiRouter }) => {
 
